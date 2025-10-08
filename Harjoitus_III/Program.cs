@@ -52,5 +52,18 @@ class Program
 
         piano.Tune();
         electric.Tune();
+
+        // Harjoitus 4. Tehtävä 3. Luo Mammal (Nisäkäs) Luokka
+        Mammal mammal1 = new Mammal("Poro / Reindeer");
+        Console.WriteLine("");
+        mammal1.Eat();
+        mammal1.Sleep();
+
+        // Harjoitus 4. Tehtävä 4. Luo Dog (Koira) Luokka, joka periytyy Mammal Luokasta        
+        Dog dog1 = new Dog("Husky bob");
+        Console.WriteLine("");           
+        dog1.Eat();
+        dog1.Eat(25);
+        dog1.Sleep();
     }
 }
