@@ -7,12 +7,50 @@ class Program
     {
         Vehicle car = new Vehicle(); // Tehtävä 2
 
-        // Tehtävä 5
+        // Harjoitus 3. Tehtävä 5
         car.Accelerate();
         car.Brake();
 
-        // Tehtävä 10
+        // Harjoitus 3. Tehtävä 10
         Console.WriteLine("Model: " + car.Model);
-        Console.WriteLine("Manufacturer: " + car.Manufacturer);
+        Console.WriteLine("Manufacturer: " + car.Manufacturer + "\n");
+
+
+        /* Harjoitus 4
+            Tehtävä 1. Toteuta luokka “Person”, ei periydy mistään luokasta.
+                        a. Luokalla on jäsenmuuttujina nimi, syntymävuosi ja ikä
+                        b. Luo rakentajametodi, joka ottaa parametrina nimen ja syntymävuoden, laskee syntymävuoden iän perusteella.
+                        c. Tee erilliset metodit, jotka palauttavat iän ja nimen. */
+        Person person1 = new Person("Maksym", 1991);
+        Console.WriteLine("Name: " + person1.GetName());
+        Console.WriteLine("Age: " + person1.GetAge() + "\n");
+
+
+        /* Harjoitus 4
+            Tehtävä 2. Toteuta luokkarakenne/hierarkia seuraavista luokista 
+            (Soittimista), MusicInstrument, Piano, Guitar, AcusticGuitar, ElecticGuitar ja BassGuitar. 
+            Mieti mitä oleellisia ominaisuuksia ja toiminnallisuuksia luokilla/soittimilla on. 
+            Toteuta olio-ohjelmoinnin mukaisesti. */
+
+        /*  Luokkarakenne/hierarkia seuraavista luokista:
+            Soittimet -> MusicInstrument -> Piano
+            Soittimet -> MusicInstrument -> Guitar -> AcousticGuitar, ElectricGuitar, BassGuitar 
+            
+            Luokat sisältävät olennaiset ominaisuudet (Name, Manufacturer, Strings, Keys) ja metodit (Play, Tune). 
+            Periytymistä, kapselointia ja polymorfismia (virtual/override) hyödynnettiin. 
+            Ohjelmassa luodaan oliot ja kutsutaan metodeja demonstroiden toiminnallisuudet. */
+
+        Piano piano = new Piano("Yamaha");
+        AcousticGuitar acoustic = new AcousticGuitar("Fender");
+        ElectricGuitar electric = new ElectricGuitar("Gibson");
+        BassGuitar bass = new BassGuitar("Ibanez");
+
+        piano.Play();
+        acoustic.Play();
+        electric.Play();
+        bass.Play();
+
+        piano.Tune();
+        electric.Tune();
     }
 }
