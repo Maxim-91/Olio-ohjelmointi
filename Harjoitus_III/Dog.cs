@@ -8,20 +8,20 @@ public class Dog : Mammal
     private int energy; // a. Luokalla on jäsenmuuttuja, joka kuvaa koiran energia määrää
 
     // b. Luokalla on oletus rakentaja, sekä rakentaja jonka avulla voidaan asettaa koiralle nimi. Dog luokan rakentajat kutsuvat yliluokan rakentajaa. (base)
-    public Dog() : base()
+    public Dog() : base() // oletus rakentaja ja kutsu base
     {
-        energy = 100; // for example, energy 100%
+        energy = 0; // for example, default energy 0%
     }
 
-    public Dog(string name) : base(name)
+    public Dog(string name) : base(name) // rakentaja jonka avulla voidaan asettaa koiralle nimi ja myös kutsu base
     {
-        energy = 100; // for example, energy 100%
+        energy = 100; // for example, energy for dog with name is 100%
     }
 
     // c. Ylikirjoita Eat() metodi, ylikirjoitetussa metodissa kutsutaan yliluokan toteutusta
     public override void Eat()
     {
-        base.Eat(); // Eat metodi from class Mammal 
+        base.Eat(); // It is Eat metod from class Mammal 
         Console.WriteLine($"The dog {name} is eating, energy level: {energy}.");
     }
 

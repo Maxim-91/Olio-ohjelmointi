@@ -5,5 +5,8 @@
 
 public class ElectricGuitar : Guitar
 { 
-    public ElectricGuitar(string manufacturer) : base("Electric Guitar", manufacturer) { }
+    public override void Play()
+    {
+        Console.WriteLine("Soitetaan sähkökitaralla.");
+    }
 }

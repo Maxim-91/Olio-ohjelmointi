@@ -3,18 +3,7 @@
     Soittimet -> MusicInstrument -> Piano
     Soittimet -> MusicInstrument -> Guitar -> AcousticGuitar, ElectricGuitar, BassGuitar */
 
-public class MusicInstrument : Soittimet
+public abstract class MusicInstrument
 { 
-    public string Manufacturer { get; set; }
-
-    public MusicInstrument(string name, string manufacturer)
-        : base(name)
-    {
-        Manufacturer = manufacturer;
-    }
-
-    public virtual void Tune()
-    {
-        Console.WriteLine($"{Name} by {Manufacturer} is being tuned.");
-    }
+    public abstract void Play();
 }

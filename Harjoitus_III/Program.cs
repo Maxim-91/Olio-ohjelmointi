@@ -32,26 +32,46 @@ class Program
             Mieti mitä oleellisia ominaisuuksia ja toiminnallisuuksia luokilla/soittimilla on. 
             Toteuta olio-ohjelmoinnin mukaisesti. */
 
-        /*  Luokkarakenne/hierarkia seuraavista luokista:
-            Soittimet -> MusicInstrument -> Piano
-            Soittimet -> MusicInstrument -> Guitar -> AcousticGuitar, ElectricGuitar, BassGuitar 
-            
-            Luokat sisältävät olennaiset ominaisuudet (Name, Manufacturer, Strings, Keys) ja metodit (Play, Tune). 
-            Periytymistä, kapselointia ja polymorfismia (virtual/override) hyödynnettiin. 
-            Ohjelmassa luodaan oliot ja kutsutaan metodeja demonstroiden toiminnallisuudet. */
+        /* Luokkarakenne/hierarkia seuraavista luokista:
+           MusicInstrument -> Piano
+           MusicInstrument -> Guitar -> AcousticGuitar, ElectricGuitar, BassGuitar */
 
-        Piano piano = new Piano("Yamaha");
-        AcousticGuitar acoustic = new AcousticGuitar("Fender");
-        ElectricGuitar electric = new ElectricGuitar("Gibson");
-        BassGuitar bass = new BassGuitar("Ibanez");
-
-        piano.Play();
-        acoustic.Play();
-        electric.Play();
-        bass.Play();
-
-        piano.Tune();
-        electric.Tune();
+        // I decided to create a survey to show how the code works.
+        Console.WriteLine("Let's play on (choose): \n1. Piano\n2. Guitar");
+        string choose = Console.ReadLine();
+        if (choose == "1")
+        {
+            Piano piano = new Piano();
+            piano.Play();
+        }
+        else if (choose == "2")
+        {
+            Console.WriteLine("Choose type of guitar: \n1. Acoustic Guitar\n2. Electric Guitar\n3. Bass Guitar");
+            string chooseGuitar = Console.ReadLine();
+            if (chooseGuitar == "1")
+            {
+                AcousticGuitar acousticGuitar = new AcousticGuitar();
+                acousticGuitar.Play();
+            }
+            else if (chooseGuitar == "2")
+            {
+                ElectricGuitar electricGuitar = new ElectricGuitar();
+                electricGuitar.Play();
+            }
+            else if (chooseGuitar == "3")
+            {
+                BassGuitar bassGuitar = new BassGuitar();
+                bassGuitar.Play();
+            }
+            else
+            {
+                Console.WriteLine("You did not choose a valid type of guitar.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("You did not choose a valid instrument.");
+        } 
 
 
         /* Harjoitus 4
@@ -74,6 +94,12 @@ class Program
         Console.WriteLine("");
         dog1.Eat(kcal100gPork);
         dog1.Sleep();
+
+        // and for "oletus rakentaja"
+        Dog dog2 = new Dog();
+        Console.WriteLine("");
+        dog2.Eat();
+        dog2.Eat(kcal100gPork);
 
         // c. Luo Mammal luokasta olio        
         Mammal mammal1 = new Mammal("Poro / Reindeer");
