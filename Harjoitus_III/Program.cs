@@ -53,17 +53,32 @@ class Program
         piano.Tune();
         electric.Tune();
 
-        // Harjoitus 4. Tehtävä 3. Luo Mammal (Nisäkäs) Luokka
+
+        /* Harjoitus 4
+            Tehtävä 6. Ohjelman Main metodissa
+                        a. Luo Dog luokasta olio.
+                        b. Luo Dog luokasta olio, välitä rakentajan parametrina nimi i. Kutsu luodun olion Eat() metodia, 
+                            ja välitä parametrina energia määrä jonka 100 grammaa possun lihaa sisältää. 
+                            Käytä hyväksesi edellisessä kohdassa luomaasi toiminnallisuutta
+                        c. Luo Mammal luokasta olio */
+
+
+        // Harjoitus 4. Tehtävä 4. Luo Dog (Koira) Luokka, joka periytyy Mammal Luokasta   
+        // and Harjoitus 4. Tehtävä 6. a. Luo Dog luokasta olio.
+        // and b. Luo Dog luokasta olio, välitä rakentajan parametrina nimi i       
+        Dog dog1 = new Dog("i");
+
+        // Kutsu luodun olion Eat() metodia, ja välitä parametrina energia määrä jonka 100 grammaa possun lihaa sisältää. 
+        // Käytä hyväksesi edellisessä kohdassa luomaasi toiminnallisuutta
+        int kcal100gPork = EnergyCalculator.CalculateCalories(100);
+        Console.WriteLine("");
+        dog1.Eat(kcal100gPork);
+        dog1.Sleep();
+
+        // c. Luo Mammal luokasta olio        
         Mammal mammal1 = new Mammal("Poro / Reindeer");
         Console.WriteLine("");
         mammal1.Eat();
         mammal1.Sleep();
-
-        // Harjoitus 4. Tehtävä 4. Luo Dog (Koira) Luokka, joka periytyy Mammal Luokasta        
-        Dog dog1 = new Dog("Husky bob");
-        Console.WriteLine("");           
-        dog1.Eat();
-        dog1.Eat(25);
-        dog1.Sleep();
     }
 }

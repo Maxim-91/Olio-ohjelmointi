@@ -5,7 +5,7 @@
                             d. Luo kuormitettu Eat() metodi, joka ottaa parametrina syötävän energia määrän ja lisää sen koiran energiaan. */
 public class Dog : Mammal
 {
-    private  int energy; // a. Luokalla on jäsenmuuttuja, joka kuvaa koiran energia määrää
+    private int energy; // a. Luokalla on jäsenmuuttuja, joka kuvaa koiran energia määrää
 
     // b. Luokalla on oletus rakentaja, sekä rakentaja jonka avulla voidaan asettaa koiralle nimi. Dog luokan rakentajat kutsuvat yliluokan rakentajaa. (base)
     public Dog() : base()
