@@ -28,5 +28,33 @@ class Program
 
         car.PrintInfo();
         cycle.PrintInfo();
+
+        /* Harjoitus 7.
+            Tehtävä 5. Toteuta Main metodissa seuraavat asiat
+                a. Luo Ohjelmoija ja siivooja luokista oliot
+                b. Tulosta kummankin työntekijän tiedot
+                c. Kutsu Work() metodia molemmilla olioilla.
+                d. Tarkista voiko työntekijä tehdä etätyötä:
+                    i. Jos kyllä, kutsu StartRemoteWork() metodia
+                    ii. Jos ei, tulosta etätyö ei mahdollista. */
+
+        // a. Luo Ohjelmoija ja siivooja luokista oliot
+        SoftwareDeveloper developer = new SoftwareDeveloper("Maksym", "Ohjelmoija", "C#", true);
+        Janitor janitor = new Janitor("Dasha", "Siivooja", "Office");
+        
+        // b. Tulosta kummankin työntekijän tiedot
+        Console.WriteLine("");
+        developer.PrintInfo();
+        janitor.PrintInfo();
+
+        // c. Kutsu Work() metodia molemmilla olioilla.
+        Console.WriteLine("");
+        developer.Work();
+        janitor.Work();
+
+        // d. Tarkista voiko työntekijä tehdä etätyötä:
+        Console.WriteLine("");
+        if (developer.CanWorkRemotely()) developer.StartRemoteWork();        
+        else Console.WriteLine("Etätyö ei mahdollista.");        
     }
 }
